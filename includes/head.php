@@ -4,6 +4,7 @@
 <meta name="author" content="">
 
 <title>Gestão do Condomínio</title>
+<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">

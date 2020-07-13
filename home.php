@@ -6,7 +6,38 @@ error_reporting(E_ALL);
 
 require_once 'db/db.php';
 
+
+ /* Displays user information and some useful messages */
+  session_start();
+
+  // Check if user is logged in using the session variable
+  if ( $_SESSION['logged_in'] != 1 ) {
+    $_SESSION['message'] = "Deve efetuar o login antes de visitar o seu portal!";
+    header("location: login/error.php");    
+  }
+  else {
+    // Makes it easier to read
+    $first_name = $_SESSION['first_name'];
+    $last_name = $_SESSION['last_name'];
+    $email = $_SESSION['email'];
+    $active = $_SESSION['active'];
+  }
+
+    // Display message about account verification link only once
+  if ( isset($_SESSION['message']) ) {
+    echo $_SESSION['message'];
+                
+    // Don't annoy the user with more messages upon page refresh
+    unset( $_SESSION['message'] );
+  }
+
+  // Keep reminding the user this account is not active, until they activate
+  if ( !$active ){
+    echo '<div class="info"> A sua conta não foi verificada, por favor confirme no seu e-mail clicando no link!</div>';
+  }
 ?>
+
+
 
 <!doctype html>
 <html lang="pt">
@@ -24,13 +55,14 @@ require_once 'db/db.php';
             <?php require_once 'includes/sidebar.php'; ?>
                 
         <!-- Main -->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <!--<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <iframe id="myFrame" src="default.html" width="100%" height=700 style="border:none;"></iframe>
             </div>
+        </main>-->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h1 style="margin-top: 10px">DataTable</h1>
         </main>
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                    <h1 style="margin-top: 10px">DataTable</h1>
                     
         <!-- Custom scripts -->
         <script>
