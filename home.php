@@ -66,7 +66,10 @@ if(isset($_GET['delete_id'])){
   </head>
   <header>
     <!-- Header banner -->
-    <?php require_once 'includes/header.php'; ?>
+    <div class="container-fluid">
+      <div class="row">
+        <?php require_once 'includes/header.php'; ?>
+
   </header>
   <body>   
     <div class="container-fluid">
