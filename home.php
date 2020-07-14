@@ -69,7 +69,8 @@ if(isset($_GET['delete_id'])){
     <div class="container-fluid">
       <div class="row">
         <?php require_once 'includes/header.php'; ?>
-
+      </div>
+    </div>
   </header>
   <body>   
     <div class="container-fluid">
