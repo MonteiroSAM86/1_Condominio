@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="Plataforma de gestão do condomínio do Prédio Rua João de Deus n.º 34">
+<meta name="author" content="Hugo Monteiro">
 
 <title>Gestão do Condomínio</title>
 <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>

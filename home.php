@@ -64,30 +64,25 @@ if(isset($_GET['delete_id'])){
     <!-- Head metas, css, and title -->
     <?php require_once 'includes/head.php'; ?>
   </head>
-  <header>
-    <!-- Header banner -->
-    <div class="container-fluid">
-      <div class="row">
-        <?php require_once 'includes/header.php'; ?>
-      </div>
-    </div>
-  </header>
-  <body>   
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Sidebar menu -->
+  
+  <body> 
+  <!-- Header banner -->
+  <?php require_once 'includes/header.php'; ?>   
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar menu -->
         <?php require_once 'includes/sidebar.php'; ?>
       </div>
     </div>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 style="margin-top: 100px" class="h2">Conta Corrente</h1>   
+      <h1 style="margin-top: 10px" class="h2">Conta Corrente</h1>   
       <?php
         $query = "SELECT FORMAT(SUM(IF (id_despesa>0, -1*valor, valor)),2) as saldo from banco";
         $stmt = $objUser->runQuery($query);
         $stmt->execute();
       ?>  
-      <h5 style="margin-top: 100px">Saldo
+      <h5 style="margin-top: 10px">Saldo
         <?php 
           if($stmt->rowCount() > 0){
             while($rowUser = $stmt->fetch(PDO::FETCH_ASSOC)){
