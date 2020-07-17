@@ -150,6 +150,7 @@ if(isset($_GET['delete_id'])){
       </div>
     </main>
 
+
         <!-- Footer scripts, and functions -->
         <?php require_once 'includes/footer.php'; ?>
 
